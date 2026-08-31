@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+@import "tw-animate-css";
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-mono: "DM Mono", monospace;
+  --radius-sm: calc(var(--radius) - 4px); --radius-md: calc(var(--radius) - 2px); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 6px);
+  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground); --color-popover: var(--popover); --color-popover-foreground: var(--popover-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground); --color-destructive: var(--destructive); --color-destructive-foreground: var(--destructive-foreground); --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring);
+}
+
+:root { --radius: 1.1rem; --background: oklch(.976 .007 74); --foreground: oklch(.235 .025 282); --card: oklch(1 .004 74); --card-foreground: oklch(.235 .025 282); --popover: oklch(1 .004 74); --popover-foreground: oklch(.235 .025 282); --primary: oklch(.47 .19 279); --primary-foreground: oklch(.99 .003 74); --secondary: oklch(.948 .014 276); --secondary-foreground: oklch(.32 .05 280); --muted: oklch(.94 .011 75); --muted-foreground: oklch(.51 .028 278); --accent: oklch(.927 .028 320); --accent-foreground: oklch(.34 .08 305); --destructive: oklch(.57 .19 24); --destructive-foreground: oklch(.99 .003 74); --border: oklch(.88 .015 275 / .82); --input: oklch(.88 .015 275); --ring: oklch(.55 .19 279); }
+.dark { --background: oklch(.17 .022 278); --foreground: oklch(.94 .012 74); --card: oklch(.215 .027 278); --card-foreground: oklch(.94 .012 74); --popover: oklch(.23 .03 278); --popover-foreground: oklch(.94 .012 74); --primary: oklch(.74 .16 286); --primary-foreground: oklch(.16 .025 278); --secondary: oklch(.28 .034 278); --secondary-foreground: oklch(.9 .013 74); --muted: oklch(.28 .024 278); --muted-foreground: oklch(.68 .026 278); --accent: oklch(.34 .06 320); --accent-foreground: oklch(.95 .012 74); --destructive: oklch(.7 .17 23); --destructive-foreground: oklch(.16 .025 278); --border: oklch(.46 .024 278 / .65); --input: oklch(.42 .025 278); --ring: oklch(.72 .14 286); }
+
+* { border-color: var(--border); outline-color: color-mix(in oklab, var(--ring) 50%, transparent); }
+html, body, #root { min-height: 100%; }
+html, body { overflow-x: hidden; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "Manrope", ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button:not(:disabled), a[href] { cursor: pointer; }
+::selection { background: oklch(.75 .11 286 / .32); }
+
+.velora-page { min-height: 100vh; background: radial-gradient(circle at 2% 0%, oklch(.92 .05 285 / .35), transparent 30rem), radial-gradient(circle at 100% 100%, oklch(.91 .045 42 / .35), transparent 32rem), var(--background); }
+.velora-surface { border: 1px solid color-mix(in oklab, var(--border) 75%, transparent); border-radius: 1.45rem; background: color-mix(in oklab, var(--card) 90%, transparent); color: var(--card-foreground); box-shadow: 0 18px 50px rgba(45,34,91,.07); backdrop-filter: blur(16px); }
+.velora-nav-link { display: flex; align-items: center; gap: .75rem; border-radius: .75rem; padding: .625rem .75rem; color: var(--muted-foreground); font-size: .875rem; font-weight: 700; text-decoration: none; transition: color 150ms ease, background 150ms ease, transform 150ms ease; }
+.velora-nav-link:hover { background: color-mix(in oklab, var(--primary) 8%, transparent); color: var(--foreground); }
+.velora-nav-link.active { background: var(--primary); color: var(--primary-foreground); box-shadow: 0 7px 18px rgba(77,65,199,.25); }
+.velora-nav-link:focus-visible, .velora-icon-button:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+.velora-icon-button { display: inline-grid; height: 2.5rem; width: 2.5rem; flex: 0 0 auto; place-items: center; border-radius: 999px; color: var(--muted-foreground); transition: color 150ms ease, background 150ms ease, transform 150ms ease; }
+.velora-icon-button:hover { background: color-mix(in oklab, var(--primary) 10%, transparent); color: var(--primary); }
+.velora-icon-button:active { transform: scale(.96); }
+.velora-gradient-text { background: linear-gradient(110deg, #384dcc 5%, #9b49bc 55%, #dc6958); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.velora-label { color: var(--muted-foreground); font-family: "DM Mono", monospace; font-size: 10px; font-weight: 500; letter-spacing: .17em; text-transform: uppercase; }
+.velora-empty { display: flex; min-height: 18rem; flex-direction: column; align-items: center; justify-content: center; border: 1px solid color-mix(in oklab, var(--border) 75%, transparent); border-radius: 1.45rem; background: color-mix(in oklab, var(--card) 90%, transparent); padding: 2rem; text-align: center; box-shadow: 0 18px 50px rgba(45,34,91,.07); }
+
+@media (prefers-reduced-motion: no-preference) { .velora-surface { animation: velora-rise .38s cubic-bezier(.23,1,.32,1) both; } @keyframes velora-rise { from { transform: translateY(6px); opacity: .01; } to { transform: translateY(0); opacity: 1; } } }
