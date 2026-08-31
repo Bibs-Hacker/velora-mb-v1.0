@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1788077219563,
+      "tag": "0000_overconfident_mother_askani",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1788077466668,
+      "tag": "0001_robust_mojo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1788077651882,
+      "tag": "0002_nasty_switch",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1788077829847,
+      "tag": "0003_unique_red_skull",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1788084977425,
+      "tag": "0004_nosy_runaways",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1788085053025,
+      "tag": "0005_fresh_titania",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1788124184883,
+      "tag": "0006_lame_cloak",
+      "breakpoints": true
+    }
+  ]
+}
